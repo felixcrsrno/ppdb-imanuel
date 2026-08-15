@@ -1,0 +1,3 @@
+@props(['steps' => [], 'current' => 1])
+<ol {{ $attributes->merge(['class' => 'grid gap-3 sm:grid-cols-'.min(count($steps), 4)]) }} aria-label="Tahapan proses">@foreach($steps as $index => $step)<li class="flex items-center gap-3 text-sm {{ $index + 1 <= $current ? 'text-primary' : 'text-slate-400' }}"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold {{ $index + 1 < $current ? 'bg-emerald-500 text-white' : ($index + 1 === $current ? 'bg-primary text-white' : 'border border-slate-200 bg-white') }}">{{ $index + 1 < $current ? 'âœ“' : $index + 1 }}</span><span class="font-semibold">{{ is_array($step) ? ($step['label'] ?? '') : $step }}</span></li>@endforeach</ol>
+
