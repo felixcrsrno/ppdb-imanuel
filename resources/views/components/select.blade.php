@@ -1,0 +1,3 @@
+@props(['name', 'label' => null, 'options' => [], 'placeholder' => 'Pilih opsi', 'required' => false])
+<div><label for="{{ $name }}" class="block text-sm font-semibold text-slate-700">{{ $label ?? ucfirst(str_replace('_', ' ', $name)) }} @if($required)<span class="text-rose-500" aria-hidden="true">*</span>@endif</label><select id="{{ $name }}" name="{{ $name }}" @required($required) {{ $attributes->merge(['class' => 'input-control mt-2']) }}><option value="">{{ $placeholder }}</option>@foreach($options as $value => $option)<option value="{{ $value }}" @selected(old($name) == $value)>{{ $option }}</option>@endforeach</select>@error($name)<p class="mt-1 text-xs font-medium text-rose-600" role="alert">{{ $message }}</p>@enderror</div>
+
