@@ -1,0 +1,2 @@
+@include('errors.layout', ['code' => 403])
+
