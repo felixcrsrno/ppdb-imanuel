@@ -1,0 +1,3 @@
+@props(['name', 'label' => null, 'type' => 'text', 'required' => false, 'help' => null])
+<div><label for="{{ $name }}" class="block text-sm font-semibold text-slate-700">{{ $label ?? ucfirst(str_replace('_', ' ', $name)) }} @if($required)<span class="text-rose-500" aria-hidden="true">*</span>@endif</label><input id="{{ $name }}" name="{{ $name }}" type="{{ $type }}" @required($required) {{ $attributes->merge(['class' => 'input-control mt-2']) }} aria-describedby="{{ $help ? $name.'-help' : '' }}">@if($help)<p id="{{ $name }}-help" class="mt-1 text-xs text-slate-500">{{ $help }}</p>@endif @error($name)<p class="mt-1 text-xs font-medium text-rose-600" role="alert">{{ $message }}</p>@enderror</div>
+
