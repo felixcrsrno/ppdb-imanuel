@@ -1,0 +1,3 @@
+@props(['name' => 'document', 'label' => 'Unggah berkas', 'accept' => '.pdf,.jpg,.jpeg,.png', 'required' => false])
+<label class="block text-sm font-semibold text-slate-700">{{ $label }} @if($required)<span class="text-rose-500" aria-label="wajib diisi">*</span>@endif<input type="file" name="{{ $name }}" accept="{{ $accept }}" @required($required) {{ $attributes->merge(['class' => 'mt-2 block w-full rounded-xl border border-slate-200 bg-white p-2 text-sm text-slate-600 file:mr-3 file:rounded-lg file:border-0 file:bg-primary file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white']) }}></label>
+
